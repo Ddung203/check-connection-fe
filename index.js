@@ -2,20 +2,27 @@ const checkBtn = document.getElementById("checkBtn");
 
 checkBtn.addEventListener("click", async (e) => {
   e.preventDefault();
-  const formData = new FormData(document.querySelector("form"));
+  const host = document.querySelector("#host").value;
+  const user = document.querySelector("#user").value;
+  const password = document.querySelector("#password").value;
+  const port = document.querySelector("#port").value;
+  const database = document.querySelector("#database").value;
 
-  try {
-    const result = await search(formData);
-    console.log(result);
-  } catch (error) {
-    console.error("Error: ", error);
-  }
+  const formData = new FormData();
+  formData.append("host", host);
+  formData.append("user", user);
+  formData.append("password", password);
+  formData.append("port", port);
+  formData.append("database", database);
+
+  const result = await search("check", formData);
+  console.log(result);
 });
 
-async function search(formData) {
+async function search(url, formData) {
   try {
     const response = await fetch(
-      `https://check-connection-v1.vercel.app/check`,
+      `https://check-connection-v1.vercel.app/${url}/`,
       {
         method: "POST",
         body: formData,
@@ -27,10 +34,9 @@ async function search(formData) {
       alert(data.message);
       return data;
     } else {
-      alert("An error occurred while sending the request.");
-      return data;
+      alert("Đã xảy ra lỗi khi gửi yêu cầu.");
     }
   } catch (error) {
-    console.error("Error: ", error);
+    console.error("Lỗi: ", error);
   }
 }
