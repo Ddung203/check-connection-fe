@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut con"
+      href="https://firebasestorage.googleapis.com/v0/b/upload-imgs-52a0d.appspot.com/o/images%2Flogo-D-noBGC.png?alt=media&token=c3bdc90f-29c9-4eea-9a63-0b979d14fb48&_gl=1*1jf57nf*_ga*OTc1MjA3NDA1LjE2OTQwODI3MDQ.*_ga_CW55HF8NVT*MTY5NjUwMjg zMC4xNi4xLjE2OTY1MDI4NDIuNDguMC4w"
+    />
+    <title>Check connection</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        min-height: 100vh;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+
+      label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      h1 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Check connect to mysql</h1>
+    <form autocomplete="off">
+      <label for="host">Host</label>
+      <input type="text" id="host" placeholder="localhost" />
+      <br />
+
+      <label for="user">User</label>
+      <input type="text" id="user" placeholder="root" />
+      <br />
+
+      <label for="password">Password</label>
+      <input type="text" id="password" placeholder="password" />
+      <br />
+
+      <label for="port">Port</label>
+      <input type="text" id="port" placeholder="3306" />
+      <br />
+
+      <label for="database">Database</label>
+      <input type="text" id="database" placeholder="database name" />
+      <br />
+
+      <button id="checkBtn" type="submit">Check</button>
+    </form>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
